@@ -1,0 +1,52 @@
+<div nz-row>
+  <div nz-col nzSpan="12" class="text-right">
+    <nz-input-group nzSearch [nzAddOnAfter]="searchIcon" class="search-box mr-right-5">
+      <input type="text" nz-input [placeholder]="langData[langCode].TIM_KIEM" [(ngModel)]="searchValue"
+        (keyup.enter)="getDataPaging()" />
+      <ng-template #searchIcon>
+        <button nz-button nzType="primary" nzSearch (click)="getDataPaging()"><i class="fas fa-search"></i></button>
+      </ng-template>
+    </nz-input-group>
+    <button nz-button class="nz-btn-green" (click)="openModal(formModal)">
+      <i class="fas fa-plus mr-right-5"></i>{{langData[langCode].THEM}}</button>
+  </div>
+</div>
+<hr>
+<nz-table #table class="table-border table-cell-middle table-margin-bot" nzSize="middle" nzShowPagination="false"
+  [nzData]="listCtvs.data" [nzScroll]="{x: '450px'}">
+  <thead>
+    <tr>
+      <th nzAlign="center" nzWidth="50px">{{langData[langCode].SO_THU_TU}}</th>
+      <th nzAlign="center" nzWidth="100px">{{langData[langCode].MSSV}}</th>
+      <th nzAlign="center" nzWidth="100px">{{langData[langCode].MA_DOAN}}</th>
+      <th nzAlign="center" nzWidth="100px">{{langData[langCode].CHECK_OUT}}</th>
+      <th nzAlign="center" nzWidth="100px">{{langData[langCode].TRANG_THAI}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let ctv of check(); let i = index">
+      <td nzAlign="center">
+        {{ i + 1 + (listCtvs.currentPage-1) * listCtvs.limit}}
+      </td>
+      <td nzAlign="center">
+        {{ ctv.mssv }}
+      </td>
+      <td nzAlign="center">
+        {{ ctv.maDoan }}
+      </td>
+      <td nzAlign="center">
+        <button nz-button nzType="primary" *ngIf="!ctv.trangThai" type="button" nzSize="small" (click)="openModal(formModal, tour)"><i
+            class="fas fa-edit mr-right-5"></i>{{langData[langCode].DIEM_DANH}}</button>
+      </td>
+      <td nzAlign="center">
+        <nz-tag nzColor="success" class="pointer" *ngIf="ctv.trangThai">{{langData[langCode].DA_DIEM_DANH}}</nz-tag>
+        <nz-tag nzColor="error" class="pointer" *ngIf="!ctv.trangThai">{{langData[langCode].CHUA_DIEM_DANH}}</nz-tag>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>
+<app-table-paginate [pageConfig]="listCtvs" (pageChange)="pageChange($event)"></app-table-paginate>
+
+<ng-template #formModal>
+  <app-form-checkin-guide [modalData]="modalData" (closeModal)="closeModal($event)"></app-form-checkin-guide>
+</ng-template>

@@ -1,0 +1,11 @@
+<p>form-checkin-guide works!</p>
+<div style="width: 300px;" *ngIf="showScanner">
+  <barcode-scanner-livestream type="code_39" (valueChanges)="onValueChanges($event)" (started)="onStarted($event)">
+  </barcode-scanner-livestream>
+  <div [hidden]="!barcodeValue">
+    {{ barcodeValue }}
+  </div>
+</div>
+<br>
+<button type="button" (click)="getLocation()">getLocation</button>
+Location: Long: {{ long}} - Lat: {{lat}}

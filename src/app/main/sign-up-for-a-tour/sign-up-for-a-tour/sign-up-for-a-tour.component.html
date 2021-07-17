@@ -1,0 +1,196 @@
+<div id="sj-content" class="sj-content sj-addarticleholdcontent sj-addarticleholdvtwo">
+  <div class="sj-dashboardboxtitle sj-titlewithform">
+    <h2 class="w-100 text-center">{{langData[langCode].DANG_KY_THAM_QUAN}}</h2>
+    <!-- Toolbar here -->
+  </div>
+  <div class="sj-manageallsession project-on-page">
+    <form nz-form [formGroup]="form" class="center-form">
+
+      <nz-form-item>
+        <nz-form-control>
+          <div nz-row class="pad-bot-form">
+            <div nz-col nzSpan="24">
+              <label>{{langData[langCode].TEN_GV}}</label><label class="field-required">*</label>
+            </div>
+            <div nz-col nzSpan="24" [ngClass]="displayFieldCss(form, 'tenGV')">
+              <input nz-input formControlName="tenGV">
+              <app-field-error-display [displayError]="isFieldValid(form, 'tenGV')"
+                [errorMsg]="langData[langCode].KHONG_DUOC_DE_TRONG">
+              </app-field-error-display>
+            </div>
+          </div>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control>
+          <div nz-row class="pad-bot-form">
+            <div nz-col nzSpan="24">
+              <label>{{langData[langCode].KHOA}}</label><label class="field-required">*</label>
+            </div>
+            <div nz-col nzSpan="24" [ngClass]="displayFieldCss(form, 'tenKhoa')">
+              <input nz-input formControlName="tenKhoa">
+              <app-field-error-display [displayError]="isFieldValid(form, 'tenKhoa')"
+                [errorMsg]="langData[langCode].KHONG_DUOC_DE_TRONG">
+              </app-field-error-display>
+            </div>
+          </div>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control>
+          <div nz-row class="pad-bot-form">
+            <div nz-col nzSpan="24">
+              <label>{{langData[langCode].NGANH}}</label><label class="field-required">*</label>
+            </div>
+            <div nz-col nzSpan="24" [ngClass]="displayFieldCss(form, 'nganh')">
+              <input nz-input formControlName="nganh">
+              <app-field-error-display [displayError]="isFieldValid(form, 'nganh')"
+                [errorMsg]="langData[langCode].KHONG_DUOC_DE_TRONG">
+              </app-field-error-display>
+            </div>
+          </div>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control>
+          <div nz-row class="pad-bot-form">
+            <div nz-col nzSpan="24">
+              <label>{{langData[langCode].SO_LUONG_SV}}</label><label class="field-required">*</label>
+            </div>
+            <div nz-col nzSpan="24" [ngClass]="displayFieldCss(form, 'soLuongSV')">
+              <input nz-input formControlName="soLuongSV">
+              <app-field-error-display [displayError]="isFieldValid(form, 'soLuongSV')"
+                [errorMsg]="langData[langCode].KHONG_DUOC_DE_TRONG">
+              </app-field-error-display>
+            </div>
+          </div>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control>
+          <div nz-row class="pad-bot-form">
+            <div nz-col nzSpan="24">
+              <label>{{langData[langCode].SV_NAM}}</label><label class="field-required">*</label>
+            </div>
+            <div nz-col nzSpan="24" [ngClass]="displayFieldCss(form, 'sinhVienNam')">
+              <input nz-input formControlName="sinhVienNam">
+              <app-field-error-display [displayError]="isFieldValid(form, 'sinhVienNam')"
+                [errorMsg]="langData[langCode].KHONG_DUOC_DE_TRONG">
+              </app-field-error-display>
+            </div>
+          </div>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control>
+          <div nz-row class="pad-bot-form">
+            <div nz-col nzSpan="24">
+              <label>{{langData[langCode].THOI_GIAN_DU_KIEN}}</label><label class="field-required">*</label>
+            </div>
+            <div nz-col nzSpan="24" [ngClass]="displayFieldCss(form, 'thoiGianDuKien')">
+              <input nz-input formControlName="thoiGianDuKien">
+              <app-field-error-display [displayError]="isFieldValid(form, 'thoiGianDuKien')"
+                [errorMsg]="langData[langCode].KHONG_DUOC_DE_TRONG">
+              </app-field-error-display>
+            </div>
+          </div>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control>
+          <div nz-row class="pad-bot-form">
+            <div nz-col nzSpan="24">
+              <label>{{langData[langCode].TEN_CONG_TY}}</label><label class="field-required">*</label>
+            </div>
+            <div nz-col nzSpan="24" [ngClass]="displayFieldCss(form, 'tenCongTy')">
+              <input nz-input formControlName="tenCongTy">
+              <app-field-error-display [displayError]="isFieldValid(form, 'tenCongTy')"
+                [errorMsg]="langData[langCode].KHONG_DUOC_DE_TRONG">
+              </app-field-error-display>
+            </div>
+          </div>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control>
+          <div nz-row class="pad-bot-form">
+            <div nz-col nzSpan="24">
+              <label>{{langData[langCode].DIA_CHI_CTY}}</label><label class="field-required">*</label>
+            </div>
+            <div nz-col nzSpan="24" [ngClass]="displayFieldCss(form, 'diaChi')">
+              <input nz-input formControlName="diaChi">
+              <app-field-error-display [displayError]="isFieldValid(form, 'diaChi')"
+                [errorMsg]="langData[langCode].KHONG_DUOC_DE_TRONG">
+              </app-field-error-display>
+            </div>
+          </div>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control>
+          <div nz-row class="pad-bot-form">
+            <div nz-col nzSpan="24">
+              <label>{{langData[langCode].HOC_KI}}</label><label class="field-required">*</label>
+            </div>
+            <div nz-col nzSpan="24" [ngClass]="displayFieldCss(form, 'hocKi')">
+              <input nz-input formControlName="hocKi">
+              <app-field-error-display [displayError]="isFieldValid(form, 'hocKi')"
+                [errorMsg]="langData[langCode].KHONG_DUOC_DE_TRONG">
+              </app-field-error-display>
+            </div>
+          </div>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control>
+          <div nz-row class="pad-bot-form">
+            <div nz-col nzSpan="24">
+              <label>{{langData[langCode].NAM_HOC}}</label><label class="field-required">*</label>
+            </div>
+            <div nz-col nzSpan="24" [ngClass]="displayFieldCss(form, 'namHoc')">
+              <input nz-input formControlName="namHoc">
+              <app-field-error-display [displayError]="isFieldValid(form, 'namHoc')"
+                [errorMsg]="langData[langCode].KHONG_DUOC_DE_TRONG">
+              </app-field-error-display>
+            </div>
+          </div>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control>
+          <div nz-row class="pad-bot-form">
+            <div nz-col nzSpan="24">
+              <label>{{langData[langCode].NOI_DUNG_THAM_QUAN}}</label><label class="field-required">*</label>
+            </div>
+            <div nz-col nzSpan="24" [ngClass]="displayFieldCss(form, 'noiDungThamQuan')">
+              <textarea nz-input formControlName="noiDungThamQuan" [nzAutosize]="true"> </textarea>
+              <app-field-error-display [displayError]="isFieldValid(form, 'noiDungThamQuan')"
+                [errorMsg]="langData[langCode].KHONG_DUOC_DE_TRONG">
+              </app-field-error-display>
+            </div>
+          </div>
+        </nz-form-control>
+      </nz-form-item>
+
+
+      <div nz-row class="ant-modal-footer fk-modal-footer">
+        <div nz-col nzSpan="24" class="ali-right">
+          <div class="pad-left-form-control" style="display: inline-block;">
+            <button nz-button nzType="primary" nzSize="default" type="button" (click)="onSubmit()"><i
+                class="fas fa-save mr-right-5"></i>{{langData[langCode].LUU}}</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

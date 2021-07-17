@@ -1,0 +1,48 @@
+<form [formGroup]="form" (keydown.enter)="$event.preventDefault()">
+  <div class="form-group">
+    <div nz-row class="pad-bot-form">
+      <div nz-col nzSpan="24">
+        <label>{{langData[langCode].HO_VA_TEN}}</label><label class="field-required">*</label>
+      </div>
+      <div nz-col nzSpan="24" [ngClass]="displayFieldCss(form, 'tenGV')">
+        <input nz-input formControlName="tenGV">
+        <app-field-error-display [displayError]="isFieldValid(form, 'tenGV')"
+          [errorMsg]="langData[langCode].KHONG_DUOC_DE_TRONG">
+        </app-field-error-display>
+      </div>
+    </div>
+
+    <div nz-row class="pad-bot-form">
+      <div nz-col nzSpan="24">
+        <label>{{langData[langCode].EMAIL}}</label><label class="field-required">*</label>
+      </div>
+      <div nz-col nzSpan="24" [ngClass]="displayFieldCss(form, 'email')">
+        <input nz-input formControlName="email">
+        <app-field-error-display [displayError]="isFieldValid(form, 'email')"
+          [errorMsg]="langData[langCode].KHONG_DUOC_DE_TRONG">
+        </app-field-error-display>
+      </div>
+    </div>
+
+    <div nz-row class="pad-bot-form">
+      <div nz-col nzSpan="24">
+        <label>{{langData[langCode].SDT}}</label><label class="field-required">*</label>
+      </div>
+      <div nz-col nzSpan="24" [ngClass]="displayFieldCss(form, 'sdt')">
+        <input nz-input formControlName="sdt">
+        <app-field-error-display [displayError]="isFieldValid(form, 'sdt')"
+          [errorMsg]="langData[langCode].KHONG_DUOC_DE_TRONG">
+        </app-field-error-display>
+      </div>
+    </div>
+
+    <div nz-row class="ant-modal-footer fk-modal-footer">
+      <div nz-col nzSpan="24" class="ali-right">
+        <div class="pad-left-form-control" style="display: inline-block;">
+          <button nz-button nzType="primary" nzSize="default" type="button" (click)="onSubmit()"><i
+              class="fas fa-save mr-right-5"></i>{{langData[langCode].LUU}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
